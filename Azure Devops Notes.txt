@@ -1,0 +1,1308 @@
+
+
+
+
+
+
+
+
+
+
+1. How create the windows VM
+2.How to create the Linux VM
+3.How to create the Linux Vm with SSH key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to create The account?
+Using provding the nessacary creditntials we have to create the account.
+
+After account we will see some services what are azure is providing.
+
+When we are clicking on the Azure active directory we will see the tentant ID and some more details belongs to ID. If want to see the subccription we have to go for subsciption details.
+
+=============================================================================================================================================================================================
+
+What is resource Group?
+What are the things required for project is called resource group. In this resource gorup will have VM, Vnet, Loadbalancer like all the required things will be kept in this resource. And hence this resource is very very import for do the project.
+
+==========================================================
+
+What is Virtual machine?
+
+A. Virtual machine like a image and its work like normal computer.
+
+Here in this VM we have provide the instance details. After providing the instance details, we will go for the Availability options.
+
+Availability Options:
+--------------------
+
+Before Availability Options we have to understand how the azure devops cloud will work.
+
+normally what happened in azure devops, it will maintain the data centers in region wise and the data centers also maintained nearby 250 kms away for each data center. In this Another data center also will be there from second data center it will also be maintained approximate 250 km away.
+
+Why becuase if any fllods or any natural distasters happened application will be not down and it will connect immediately to another data center. this is the main advantage of azure devops.
+
+In this availibilty optins three opitons are there.
+
+1. LR (Locally Redundancy) - Where the primary data and backup data will manitain the in the same zone is called locally redundant. in this case normally what happens if something is happened to the perticular data center, we have to wait till the data center will be up. This loacally redudant will be used in the lower envirements.
+
+2. Zone Redundant: If the primay data will be will be maintained in the zone 1 in data center and the backup data will be maintained in the zone 2 or zone 3 with the same data center is called zone redundant. if something happened to the data center trafic will be moved to the next datacenter either zone 2 or zone 3 which ever is near. so our project or application will not down and continoulesly it will be connected.
+
+3. geo Redundant:Geo Redundant is nothing but, if the some thing happned to one region and the same data backup will be manitained in the another region for safety purpose. If something happned it will connect the another zone immediately.
+
+======================================================================================================================================================================================
+
+Our VM images will be availbe at Market place.
+
+What is azure discount?
+A. Azure discount is nothing but if he data center capacity is 100 already 99 VMs are running perminanly if we want to run our VM in that data center data, we can runit. But suddenly if any VM will came and to add into that datacenter perminantly then forcufully our VM will be terminated or throw out immediately. In this case our data also will be deleted perminantly.
+
+Generally this will be used in the lower envirements. In this azure discount case we have to pay less amount to the service provider.
+
+Size based on client required we will use the Size. And here Iops are very very important.
+
+In performance level IOPS will play the vital role. IOPS : Input and Outpur operations per second.
+
+Providing the Username and password we will be creating the VM.
+
+Here inbound Port rules:
+
+22 SSH linux VM, 3389 Windows VM, HTTPS, and HTTP.
+
+Here few points to have to discuss. 
+
+How can we know if public is accessing the VM or Authorized people are accessing the VM?
+
+So for this reason here NSG will come into the picture.
+
+What is NSG and hoow it will work? NSG means Networking Security Group. This work is it will detect who are connecting the VM.
+
+============================================================================================================================================================================================
+
+Disk: Here Dis Means, Two types like normal computer.
+
+HDD: Hard Disk Drive- Performance is low, cost is low and size is high.
+SSD: Solid State Drive - Performace is high, cost is high and size is less.
+
+Here we are crating the VM? While creating the VM, here few More will be created along with the VM.
+
+Public Ip Address , Private IP, NIC(Network Interface Connection), NSG, DISC.
+
+Here NIC will maintain the Public IP and Private IP.
+
+Here after proving the details we will create the windows VM. After creating the VM using the IP, user id and password we will connect the windows VM.
+==========================================================================================================================================================================================
+How to connect the Linux VM?
+
+A. Here the same like Windows we have to create the LIxnux VM and have to connect the with Linux VM.
+
+How can we connect the Linux VM.
+
+Command Prompt- CLI Command Line interface
+Puttyv - CLI Command Line Interfac and User interface
+Techia 
+Mobaxterm 
+Winscp
+
+Here will use the CMD
+
+Here syntax for Linuxm VM is
+ssh userid@publicip
+Pwd: xxxxxxxxxxxxxxx
+
+If we provide the the details accoridngly we will connect the linux VM.
+
+After connecting the LInux VM we have to update the VM.
+
+Apt uppdate.
+Sudo apt update- update the VM.
+Sudo Apt Install Nginx - have to pull the code.
+cd Filepath
+ls list the details
+Cat Filename
+Sudo Nano Filename
+save and enter that we have to save the data.
+
+==========================================================================================================================================================================================
+
+How to Connect with Linux VM with SSH Key? 
+A. We have to create the resource group and later on we are trying to create the VM with providing the details there we have to choose the SSH key.
+
+This ssh Key Contains pair of keys
+1. Public Key and Private Key.
+
+Here we have to download the private key and need to save in local system.
+
+Now how can we connect the linux vm using with SSH key?
+A. We have to open the command.
+and here we have to connect with linux vm and command is 
+
+ssh -i filepath\filename.pem userid@publicip. This the command line.
+
+This command we have to connect with linux and remaning is as usal all are common commands.
+
+How to connect the cli using with UI?
+A. Yes we have one option we can connect the cli using with Winscp.
+
+Here we have to create the Linux VM and then we have to open the wINSCP,After proving Public Ip, username and password it will be and simultaniously we have coonect with the linux VM also using the Command line prompt.
+
+Here how to check where we are working in CLI 
+pwd
+
+remaining commands all are common.
+
+Here how can i chnage the code in winscp, here we have to open path and open the file.
+
+Here we can open the file we can edit the file with our code, but it can not been saved. Reason the file doenst have person.
+
+for this we have to use the commands sudo chmod 777 filename
+if we want to provide the permission to the file path level, we have to use the commnad sudo chmod 777 filepath
+
+here what is 777 this is octal number.
+
+before that what are there in this root, here there things are there,
+
+owner- Here owner is the nothing but who create this code or something else for this file. 
+Group- Group is nothing but, this our team member or next level, this will work like. if the owner is not availbe to provide the persmission, then group come into the picture and will provide the permissions
+Others- Others is purely outside persons who are accessing the VM.
+
+Here what kind of permissions are available.
+
+Read, Write And Execute
+
+Here small formula is there that is, 3 permissions are so that is the reason we are taking binary logic or formula here we are considering the
+
+Read                     Write                            Execute
+
+2p2                       2p1                               2p0
+2*2                       2*1                               2*1
+4                          2                                 1  
+
+Owner- 7
+Groups-7
+Others-7
+
+If we caliculate all together is 4+2+1 = 7 means (Read + Write + Execute)
+
+that means of we mention all like 777 (Read, write, execute)
+
+If we want to provie Rw- -w- -wx(623)
+
+Like this octal number will be come into picture.
+
+if we change the code from the local VM with Winscp in cli we can check the content is changed or not like 
+
+Cat filename.
+
+This is how we can connect with the cli using UI.
+===========================================================================================================================================================================================
+Here what will happened if we stop the VM?
+If we stop the VM, VM will be stopped immediately. But VM is in deallocating position means VM was not deleted. It will be there in the cloud level. So in this case we have to pay less amount compare with running position. 
+
+If we delete the VM everything will be gone, in this case we have not to pay any amount to the service prvoder or server provider.
+
+Capture:
+
+How can we capture the VM, and what are the uses of caprtuing VMs?
+Here we have to alloberate the Capture.
+
+Firstly normmaly what is the capture is,
+
+1. we have created VM
+2. We have updated VM 
+3. We have pulled a code in the VM 
+4. After pulling we have replaced the code with our own code.
+
+After that other reason we have to logged out the work and tomorrow we have to start the position. 
+ 
+In this case again we have to start the vm and contue the same work again and again, here what happens is cost will be increase due to time and VM.
+
+i this case we can use the Capture option it will take the picture upto the last operation or last status it will capture.
+
+This capture image we have to provide the image name, vertion of the image and where we have to save the image means everybody will access the VM if we save the image in Gallery marketpalce or if want to save the image for us it will be saved in my images tab.
+
+After taking creating the image, the existing VM will be stopped and image will be creatd successfully.
+
+Later we have to create the Vm again in this we have to select the image where we have saved, then here one more option came into the pictre, that is generalised or specialized.
+
+What is meant by Generalised: Generalized means here we have to provide every details as new.
+What is Specilized: Specilized means the details will be cosider the previous VM.
+
+After creating the vm with required details, we have to copy the Publicip and directly click on the webpage , then immediately we can get the output where we stopepd the last.
+
+this is the usage of Capture and this is the process of capture.
+
+Normally if this capture  will be use in two cases, that is the above is one process and the second one is 
+
+if we want donot touch the prod envirement, but have to rewrite the code or test the code, we have to capture the code part and will do create the Vm and do the testing and again updated in the prodcution.
+
+This is hwo capture will be used.
+=========================================================================================================================================================================================
+
+Networking:
+
+For Every project we have one Network and And Every Network have some subnets.
+
+Here how the netwoking will work in the back ground that we are doing here.
+
+Here normally we are connecting the VM using with Public IP. If we want to connect with Private IP is called Bation process.
+
+
+Here how we can represent the IP we have to going to known here.
+
+Here IP: 10.0.0.0/16
+
+Here first two Numbers (10.0)will be belongs to virtual network (.0) and the final will be any thing from 1 to 256. Here 16 will be the netmask.
+
+Here how netmask will play the role, yes 
+
+About netmask normally in ythe work we have 429 crore Ips are available to use.
+
+Normally ip will be represent  is the last ip so 255 (Here we have to go if we reach 255 from 2po to 2p7) here every digit have internally 8 binary digits.
+
+2p7                             2p6                      2p5                  2p4                   2p3                      2p2                    2p1                2p0
+2*2*2*2*2*2*2*2*2        2*2*2*2*2*2*2*2             2*2*2*2*2*2            2*2*2*2                2*2*2                     2*2                    2*1                2*0
+128				64			32			16		     8                        4                      2                  1 
+
+If we merge all to gether it will be 255. for one digit it will be internally 8 binary digit.
+
+here 429 crore came like if go from 2po to 2p31 the final amount will be which are available for usage in the world.
+
+Here Subnet:
+
+Here subnet will be very important, for example if we have one Vnet for Every Vnet have atleast 1 subnet.
+
+How the subnet will work?
+
+Here for suppose if we have VnET Netmask have 22 that means we have 1024 Ips. Here 1024 Ips we can put in one Vnet but, here what will happened, if Vnet created immediately One Subnet also will be created and then VM will be placed in to the subnet. 
+
+Here if outer person would like to connect the Vm they will connect from Public IP and private IP will be used to connect the component to component.
+
+Here we have to go in subnet upto netmask with 24 only.
+
+That menas 256 IPs will allotted for one subnet. beacuase we can go upto 255 as per the binay digit.
+
+if we want to allot 1024 ips means here we have to connect with 4 subnets.
+
+Here we can check our VM is responding or not can check with the ping privateip.
+
+============================================================================================================================================================================================
+
+Peering Process:
+================
+
+Peering process is nothing but if we want to establish a connection between one network to another network is called peering.
+
+This peering proces will be happened within the resgin or with in the another region also.
+
+in this peering process if we want to establish a connection between one network to another network just we have to prvodie a link from source to destination.
+
+Based on this link peering will start. If we want to check the connection status we can check with the Ping command and private ip address.
+
+Here we can connect one cloud to another cloud provided with NAT Gatway option.
+
+How can we play arround the public IPs?
+
+Yes here we can play with public IP address. If we want we can romove public ip addres and de associate the public IP address.
+
+Here we can a create new public IP entirely which will be not tagged to any VM.
+
+Here we can go to the Network interface and and here we can do all the things.
+
+Here SkU will be enter into the picture, SKU means "stock-keeping-unit".
+
+Here another option is there if we want we can attach new network interface also to VM.
+
+===========================================================================================================================================================================================
+
+Load Balancer:
+=============
+
+Load balancer is nothing but if VM1 and VM2 are available. Here from our side somany request will come to VMs, here if all thr requests are going to VM1 it will be burden. Then servrer will be down.
+
+Here how the tracffic will be managed is with load balancer. Here the load balancer main concept is to share the traffic properly to the VM based on the things.
+
+Here normaly what happeneds is if the VM1 is gone for update Vm2 will be available. If the VM2 is availabe VM1 will be availabe. If the two VMs gone for update, here the two more instances will be create. Means replicas.
+
+Here if Either two will be gone for update surely two will be availabe for working.
+
+Here instances will be created that process is called Availability Set.
+
+Here Availability set is called, where the instances will be generated, here Maximum we can two instances.
+
+That means Main VM and two instances.
+
+Here Main VM is called as Fault domain0 and 1st instance fault domain2 and 2nd instance fault domain2.
+
+Here we can go maxium 20 domains will go for update and remaning will avalaibe for working. And one more thing here we can generate total 3 fault domains. Here we have to provoide the details loadbalcer then only they will recongnise the VM which are avaiable in the same.
+
+Here we should go go and connect with Loadbalancer , here how can we connect the loadbalancer. Yes we have to create the public ip to the loadbalancer which will be never tagged to VM.
+
+Here the Loadbalcers are two types, one is internal loadbalance and another will be external loadbalancer. Here before instances means at external loadbalcer part is called front ip configuration and after loadbalancer is called backend pools.
+
+What is the use of Internal Loadbalencer?
+
+Here if we send the request to VM and later will be for instances after VM or instances will hit the databases.
+
+ If all the data bases hits one data base response will be delay, so that is the reason we will maintain the copy of the db also.
+
+Yes in this case if we have two or more DB's then hit request to which data base that will be take care of the internal laoad balancer. Here same like we have to provide the Database details also should be provide to the loadbalancer.
+
+Here how to connect the loadbalancer and how the loadbalacer will be work that all will need to practicle here.
+
+===========================================================================================================================================================================================
+
+What is storage Account:
+=======================
+
+Storage acoount is nothing but where we can save the data like blobs, images videos, like data any other.
+
+Here two topics are there 
+
+file shares and containers.
+
+Before going to this pionts we have to see what is storage account.
+
+Here the same redundancy concept will repeat.
+
+LRS : Loacally redundancy storage account.
+
+Here what is LRS where the primary storage account and backup will be same region is called LRS
+
+ZRS: Zone Redundancy storage account: Where the primary will be in the zone 1 and where the backup data will be availabe in zone 2 or zone 3 is called zone redundancy storage account.
+
+Geo Redundacy: where the primary data center will be done entire region, then the next copy will be avaialbe will be at another zone is called Geo redundancy. This is called Zeo Redundacny. Here Geo Redundacny fail over will be happened there 6 months will use one data center one zone and another 6 months will be in another zone.
+
+Geo Zone Redundancy: here where the primary data will be in one data center and another backup will be in remainig 3 zoness in another regions is called Geo Zone Redundabcy.
+
+Here what is RestAPI: 
+
+Here API Apllication programming interface, here if some thing opened in that other person will be getting messages and other giving reply,it is working on based on the API.
+
+Here RestApi:Representation state tranfer Application programming interfance.
+
+Here we should know about JSON format:
+
+if the we taken one question and ansewer like 
+
+age = 30 
+hight = 5.5
+
+Here question will be treated as key and answer will treated as value.
+
+now what are the rules we have to follow in JSON;
+
+1. Here every key and value should be enclosed with "" double quotes.
+2. Here Key and value should be seperated with coloun :
+3. Here Key and colon should not have the space and colon and value shopuld have the space.
+4. Here if every value sould be seperated with comma, except last value
+5. Here if the value have multiple entries every entry sholuld be enclosed with curly Bracelet bracket.
+6. Here every content should be seperated with comma
+7. Here if we have the two contents, here every content should be enclosed with curly bracelet bracket
+8. here all the details should be eclosed with big bracket.
+
+Container: 
+==========
+
+What is an container?
+
+Here container is where we will the data in store account, in that sotrage account container will generated.
+
+Here how many data types are available we have know.
+
+One is here where the charectors and numbers will contain is called string data types.
+if the table have numbers that data type is called - number data type.
+If the table contains only date is called Date datatype.
+
+The above data is called Structured data.
+
+Here if we the weside have contians images, videos is called blob data.
+
+BLOB: Binary large objects. this is will contains huge fails, like videos and all.
+
+These Blobs will be saved in the Blob containers. Here this blobs dont have a access for other people.
+
+here the if we connect the storage account publicly.
+
+Here we can connect the storage account publicly and privateely like using with vnet. This process is called service end points.
+
+Here we can only connect with Vnet with securely is called private endpoints. Here practicle sessions need to check how can we connect with service end points and private end points.
+
+Here we have to know about soft delete and hard delete.
+
+Softdelete is noting but if we delete the file we can recoverable again is called softdelete.
+
+Hard delete: If we delete the file we cannot collect again is called hard delete.
+
+File share:
+===========
+
+Here we can share the file 3 ways.
+
+what is the use of file share and how it will be used in storage account.
+
+here file share will be used if some of the people handel one project, in that project if one person uploaded the file, that file will be access for all who are doing the work.
+If any one did the modification every body will get the updated document. But here there will be no vertion files are availbe. only updated files will be updated. if someone delete the file it will delete for all.
+
+Now how can we do it now, have to check the possibilities.
+
+
+Here how can we access the storage account with windows VM, and how can we connect with linux vm, and how can we upload the file with azure portal level.
+
+Now here we have to create two VM like windows and linux VM.
+
+Here we have to connect the storage account and click on connect there for windows and linux scripts will be generated by azure.
+
+Here we have to now have to opne the powershell command line prompt and need to enter the script here.
+
+Now here we here we are connecting the linux vm and as normal procedure we have to update. After update and all have to provide df command it will show all the folders which will show here.
+
+after this we have to enter into as administrator as sudo su then root will coming into the picture.
+
+Here after need to copy the linux script and paste here then file will be generated.
+
+Here the same if we want to create the windows level, here we have to open powershell and need to paste the script.Then folder will be generated. 
+
+In the cloud lever just we can upoload the file.
+
+This is all about file shares.
+
+Containers:
+==========
+
+Containers are two types.
+1. Public Containers
+2. Private Containers
+
+1. Public Container: Public Container is here eveyone can access the public container.
+2. Private Container: Private contaienr is noting but no body will have the continter.
+But here one option is there to connect the private container.
+
+That is SAS (Shares signature access) = Here Read, Write, Delete options will be provided.
+                                     = Start time and end time 
+                                     =  IP Address 
+                                     =  HTTP or (HTTP or HTTPS)
+
+Public Container:
+================
+Here we need to create the public container for understanding purpose. Here in this container blobs are availabe. Here public container means every one will access.
+
+Here two types of permission are there, that is we can provide blobs level and container level also.
+
+============================================================================================================================================================================================
+
+Service Endpoints:
+=================
+
+Service End points are nothing but where we can connect the storage account publicly or with Vent is called Service Points.
+
+Here service endpoints are free of cost and private endpoints are not free of cost.
+
+Here we have to create the service end points we have to provide one Vnet compulsary and add some public ip as well then we have to create container.
+
+Here then we will try to connect the the container then it will be allowed.
+
+Here we can connec the public and private network will be allowed.
+
+Now Private End point:
+=====================
+
+Private End Point is nothing but no one have access for the storage account in cotnainer.
+
+In this private end point Vm and storage account will be kept in the vnet. Now this is very secure. Then if any body want to connect Vm and then Vm will connect storage account.
+
+If we want create more security then we have to add Private DNS, here Private DNS will be optional.
+
+Now here we have to provid Vnet details should be provided to Private DNS. Here Private DNS will allows to check the reuqest is correct or not  this Private DNS will check and approve the request.
+
+Here we can connect the storage account whihc will be available in one network and if we want to connect from another network is possible using peering process.
+
+the same concept in the network concept. But here we have to addd Vnet2 also to the Private DNS then they will allow the traffic.
+
+Here in the storage account containers, Quees and tables are availabe.
+
+Here where we are creating private end point for container we will access containers only. If we want to access quees we have to another private end point like this if we want these many we have to create those many private endpoints need to be added.
+
+Here as the peerings know same as we will connect or we will merge with two vnets. using this Vent we will start peeing and connect and the both network details should be abled to enter the details into Private DNS. then we have to connect with VM. 
+
+This is called Private End points.
+
+============================================================================================================================================================================================
+
+Here how can we provide the access to outside people.
+
+Here yes we can provide the access to outside people using with two options.
+
+1. Access keys
+2. SAS (Shared Access signature)
+
+1. Access Keys: Here Access keys will provide the full access to the outside people.
+
+here we can provide the access key like, when we have to enter storage accoount we have to download .exe file from open in explorer.
+
+Here after download the file it will ask permissions then here we have to connect with "account name and key" option.
+
+There we have to open storage account and need to click on the access key there userid and 2 keys are availabe here we have to prpvide userid and any access key, accordnlgy they will connect with the access keys.
+
+SAS: Here SAS Shared access signaure will have restictions, here we can provide the permissions where we want.
+
+While creating the SAS here generate SAS keys will be generated for every one like Blob, Ques, tables and everyone. If we provide one key we can access all the thing as per the permissions.
+
+this is all about Storage Account and how can we connect the storage account.
+
+==========================================================================================================================================================================================
+ Web app / App services:
+ =======================
+Here much we have to discuss about web apps. and what are the differences between VM and Web app
+
+The below are the major differences between webapp and vm
+
+Scalability: A web app can scale automatically based on the demand, while a VM requires manual scaling and load balancing.
+Cost: A web app is usually cheaper than a VM, as you only pay for the resources you use, while a VM charges you for the entire virtual machine, even if it is idle.
+Maintenance: A web app is easier to maintain, as Azure handles the updates and patches for the platform, while a VM requires you to manage and secure the operating system and the software.
+Flexibility: A web app has some limitations on the languages, frameworks, and libraries you can use, while a VM allows you to run any code you want.
+
+VM: 
+==
+1. Here we will connect the VM with Publicip
+2. VM dont have seperate code while creating.
+3. We have to install like nginx to pull the code, and need to replaces our code with this.
+4. Here if we want to install softwares we have to install mnaually.
+5. Here size can be chsoosed based on requirement.
+6. Here so many options for VM like windows,Linux,other Vms also availabile.
+7. Here we can connect VM with Winscp
+
+Webapp:
+=======
+1. Webapp will connected using Url
+2. Here while creating webapp by default code will be provided
+3. Here we can replace the code what ever we want
+4. Here softwares will be installed automatically by using required runtime stack.(Here while running the code in the backend one VM(Instance will be running).
+5. Here one two options are available for VM's one Linux or Windows
+6. Here Size can be choosen
+7. Here also we can connect with Winscp
+
+In overall Webapp is outer cover of VM. And Webapp is upgraded vertion of VM.
+
+============================================================================================================================================================================================
+How to create the Web app and what are the internal things are there in the webapp?
+A. Here we have to create the we web app and the following things are there.
+
+Here we have to open App services and in the app services we have to select webapp.
+
+Here we have to select the region and publish what we are going to pulish like code, docker container or what ever the options are there we have to choose them.
+
+After that runtime stack we have to as disccused previously in the runtime stack so many softwares and vertions are available. Here based on the code we will select and here we will select which Vm we need.
+
+Here we have to choose the size along with size here feature view option also avaialbe. This is additional benifit for the webapp.
+
+Here in the feature view somany opitons are availabile like SLA(Service Level Aggrement), Stage Slots and so many things are availabe.
+
+In we apps for configuration mainly three configurations are availabe.
+
+1. Devolpement configuration 
+2. Prduction Configuration 
+3. Isolated Configuration.
+
+Here Devolopement configuration means this will selected for dev enivrement only. In this configuration price is very less and very slow as well.This will avaialbe for the developement people.
+
+Here Production configuration means this will be selected for production envirement. and this confuration have so many options and medium price and this configurations will be used at production envirement. This is will availabe for all the public.
+
+Isolated Configuration: In this isolated configuration it will be used and allowed for only authirized people and not for all the public. This isolated confuration will be comeup with the special price. Comapred with all also this price is all most 3-4 times.
+
+In next Tab Githgub actions enable or disable
+
+Here if we say enable means continuoes deployment will be happened.
+
+In next tab networking. Here networking means tow options are availabe.
+
+1. Public will access the webapp 
+2. Private People will be access the webapp
+
+If we disable the public means private people means using Vnet we have to access the webapp.
+
+Here we have created the webapp we have to connect with url which will available at overview
+
+Here what is scaleup?
+Here scale up means at anypoiny we can upgrade the configuration.
+
+Here scaleout method means, here for suppose we have pushed code in webapp and from public if the app getting less requests one instance will be there and that will manage. If the instance getting more request then app will be down in this case if we want we can increase the instances manually. for suppose if we keep 2 instances, that 2 instances will be running in all the times. 
+
+For suppose in rules based concept means if we select rules based concept, based on request instances will be increased and down based on the requst.
+
+Here stage slots:
+
+What are the stage slots and how the stage slots will be used.
+
+Here in older metholdogy for suppose if we wan run one applicaiton, we used one for dev envirement , another one for UAT envirement and 3 rd one will be for Prod envirement.
+
+but here in web apps have one more flexibility in 1 webapp we can create multiple slots and run the code within the webapp.
+
+Here we can create maxium 20 slots. and each slot will have seperate url. These statge slots will be created at deplyment slots.
+
+Here by default one slot will be created and that will be prod slot. If we want we can create more stage slots.
+
+Here how can we edit the code?
+Yes here we can edit the code using winscp connecting, here we have to connect with winscp. Here the process to connect wthe winscp.
+
+After opening the winscp we have to move to deployment center, there one FTPS endpoint and user name and password will be dispalyed.
+
+Here normally in the method of connecitng VM, will mention IP address username and password, here instead of that we have to provide FTPS service endpoint details and have to provide the username and paswword, then it will be opened and conneced to the directr path and that dispalying path code will be available.
+
+Here the same process we can change the code.
+
+This is all about appservices/Webapp.
+
+With this topic recources are completed.
+
+============================================================================================================================================================================================
+
+Here till now have saw how to create the resources using portal level. Now we have otherways as well we can create the resources.
+
+What are the process:
+
+1. Command Line Methodology 
+  1. Using Cloud shell
+  2. Using Azure CLI
+
+Cloud Shell:
+===========
+
+Here Cloud shell will be the internal portal level. Here we have to click on cloud shell. When we have click on cloud shell it will ask to create the stoage account. In this cloud shell if we want to run we must have the storage account.
+
+After creating the storage account here we two types are showing like bash and powershell. if it belongs to bash script they will write down the bash script, if it belongs to powershell script we will create powershell script.
+
+Here in this CLI also we have to provide the commands.
+
+Here we have to the follow the 3 rules:
+1.Here Every Command starts with AZ 
+2.the second term will maintain the which type of the thing we are delaing with. (For example we are dealing with Group, VM, Storage account and more.....)
+3.The third term is what is the type of action we are dealing with (For Example Create, Delete, Update, List and more................)
+
+Here few commands we have to do for the practise.
+
+1. how to list the group?
+A. az group list
+
+here output came into josn formate as explined before.
+
+if we want to see the same list on table formate?
+A. az group list -o table  (In this case formate will be displayed in the tabler formate). For suppose we dont have a anything in the list it will be see with closed brackets.
+
+now we have to practise more commands like this.
+
+Here if we want anything we have to check the details in the google have to provde the details in az command.
+
+Here we can provide the details on the fly as well.
+
+Here how can we provide the details on the fly we have to check and practise.
+
+az vm create --resource-group RG-Demo-1 --name ubuntuVM --admin-username hitesh123 --authentication-type
+
+Here like this we have wrok with like Cloudshell.
+
+Azure CLI:
+==========
+
+Here Azure CLi aslo same like cloud CLI. Commnads and everything are same.
+
+Here for Accessing AZure cli we have install Azure CLI software from google and then we have to open CMD.
+
+In the command prompt first we have to login with Az login command and then it will directed to azure portal for login.
+
+After login into the portal as usaul we have provode all the commands in the command prompt. az group list, az group delete -n name.
+
+After practising all the commands we have open the powershell script.
+
+Here powershell scirpt will be used to run all the commands at a single time using powershell.
+
+What ever we have used the commands we have to group all the commands in single notepad and need to save as .ps1 extention.
+
+after providing all the details we have to open powershell which has been inbuilt and need to direcreted to the path first like d:
+
+After that we have to provide ./ pwoershell script name .ps1
+
+then automatically it will be executed based on the written commands. And we will get the output as per the commands.
+
+But for better undertsanding purpose here we will use echo command. echo means which will be repeated.
+
+Here ecco '*** Group Name*******'
+     ecco '*** VM Name*******' like this we will be seperated the commands for our or ourside people understanding purpose.
+
+Here what ever we have given in this some the valve will be frequestly change. For this we have to user verbalization concepet in next class.
+ 
+============================================================================================================================================================================================
+
+Here as discussed in the previous calss how can we provide the details in powershell script.
+
+Here powershell in the powershell scripr as learned earlier we have to provide all the commands and need to run in the powershell.
+
+Here every time some values will be changes for suppose Vm Name, Resource Group name, Vnet, Private IP, and Private Pre-fix like this and we have more values will be changed frequenly. Then how can we change the valves with out touching the powershell script.
+
+Yes here Verbalization concept will come into the picture.
+
+Verbalization means here we will declare the some information using $ symbol, then here we cannot touch the entire script in the powershell.
+
+for Example how to provide the verbalization 
+
+$RG-Name="Hitesh-RG"
+$Vnet-Name="Vnet-1"
+$VM-Name="Windows-VM1"
+
+like this we have ro prvide the details in powershell script for verbalization.  This is one case we can run the script with out touching all the script.
+
+But someone wants to run the script without touching the powershell script with single point. Is that possible.
+
+Yes its possbile. With out touching all the details we can provide the details in the fly like change the scrip in single time. How can we runthat and what are the verbalization we can use here.
+
+$RG-Name=read-host -prompt 'Please add Resource Group Name'
+$Vnet-Name=read-host -prompt 'Please add Virtual Network Name'
+$VM-Name=read-host -prompt 'Please add Virtual Machine Name'
+
+Like these we have provde the details in vverbalization in powershell. Then on the fly it will take the details while running the script.
+
+This is all about powershell script.
+===========================================================================================================================================================================================
+
+ARM Templates: This is very important topic in realtime we have to use the ARM templates frequestnly.
+
+ARM Templaes: Azure Resource Manager Templates
+
+In ARM Templates mostly we will use json templates.
+
+Now how to write the ARM temlpate and what are the rules we have to follow.
+
+For explample if we write one template to create the VM,
+
+Create Virtual Machine = 
+                        VM Name 
+                        Resource Group
+                        Vnet
+                        Subnet 
+
+Like this if we wrote some template as did powershell script we have provide like verbaliization. But here Vailabilization we cannot provide the dollar symbol.
+
+Here maily ARM teplates having 3 formates 
+
+1. Variables 
+2. Parameters
+3. Resources.
+
+1. Variables: Here variables means which valves will not be changed it will called variable.
+=============
+For example 
+
+If we taken the below template 
+
+Vm_name: Windows-VM1
+Vnet_Name: Vent-1
+Vnet_Address prefix: 10.5.0.1/16
+Subnet_Prefix- 10.5.2.1/24
+
+In the abive case we can mention in the ARM template we have to mention like Json format.
+
+Example in the ARM formate above will be like
+[
+{
+"Vm_name": "Windows-VM1",
+"Vnet_Name": "Vent-1",
+"Vnet_Address prefix": "10.5.0.1/16",
+"Subnet_Prefix": "10.5.2.1/24"
+}
+]
+
+Like this we will mention Vairables.
+
+Paraments:
+=========
+
+Here how can we declare Parameters in ARM Templates
+
+Here like the Json formate for have small difference.
+
+For Suppose of we want mention some valves which will be chagned frequently that values should be provided in the parameters.
+
+[
+{
+"Storage Account_Name":
+                  {
+                   "Type": "String",
+                   "defaultvalue": "hiteshstrg-123",
+                   metadaatype:
+                    {
+                     "descrption": "details Storage account name"
+                    }
+                    },
+{
+"VM_Image":
+           {
+           "type": "string",
+           defaultvalue" : "windows11",
+           allowedvalues:
+          [
+           windows7
+           windows11
+           ubantu
+          ]
+metadatatype:
+           {
+            "description": "details for VM image"
+           }
+}
+},
+]
+
+this is how we have finish the prameters.
+
+What are the rules need to be follow in the parameters:
+
+Here need to follow the same as json template.
+
+But here will be follow like type,defaultvalue,metadatatype,allowed valves.
+
+What is meta data type: Metadata type is nithing but the information of the purpose.
+What is Allowed Values: Here allowed values is nothing but here we will declare the dafault value, but if we want select more details in the fly or the resource have the more options we have to be mentioned in the allowed values.
+
+Then on the fly we can change the values.
+
+If we have not mentioned any value in the default value section it will take the details on the fly or executing the code.
+
+Resources:
+==========
+
+Resource is nothing but whatver we have created the varaibles and parameters will be provided in the resources.
+
+for example the format will be mentioned like below.
+
+If the Vm name will be mentioned in the variable here we have to mention the "[variable('VM_Name')]"
+if the VM size will be mentioned in the parameters here we have to mention like "[parameter('VM_Size')]"
+
+This is how we have mention and all the keys and valves should be mention in json formate like mentioned above.this is how we can execute the code in the webapp.
+
+In real time if we want any template we have to copy the template from google and have to place the values in the respected script.
+
+Here How can we deploy the code in VM and How can we deploy the code in Webapp will need to be practised.
+
+Here we have to open the Templates and have to place the available templaes and need to save the template.Then we have to delopy the codes based Vm or webapp we have to deploy.
+
+This ARM templates are very imoortant in devops and this will be in json format.
+
+Till this azure admin concept has beed completed.
+
+===========================================================================================================================================================================================
+From this onwards devops will start.
+
+GITHUB CLI:
+===========
+
+Github is a storage or resposity where the Source code availabe.
+
+In this Github if we want to work we have to download the gitcli.After loging into the Git CLI we have to seee the there so many options. There we have to create one respositary with readme.md file or if we want we can create the respository with out readme md file.
+
+Here after creating the repository have to check and open the resposity or edit the resposotiry after did the modififcations in the code have to commit the changes.
+
+There if we want to check the details we have to commits and need to see how many commits are happened.
+
+Here public and private both are showing. Here public means the code will be availabe at all the people and any can download the file.
+
+Here private means no body will access and the code will be saved for only.
+
+Here Gitignore means, this gitignore will puch the files to repository which files will be needed and what files are not needed.
+
+Here After creating the GITCLI:
+===============================
+
+Here the process how the respository will wrok.
+
+the below steps need to follow the below steps.
+
+1. Here first we have the code in our local machine and our manin target is we have to puch the code to the respository.
+
+2. Now first we have to create the respository in the cloud then we have to clone the resposity to the local machine. Because it we would like to push the code directly it wont understand what it is. For communication pupose between local machine and respository we have to clone the respository.
+
+2. Here is the cloning process will gitcli is here we have to use the command "git clone url of the repository". Before cloning the repository we have to direct to the path where we have to save the respository. using d:   
+
+3. Here we can see the respository will be successfully clone to the local machine.
+
+4. After cloning we will replace the own code with previous code. Here what we have to in the git cli. after replacing the respository will undertand new file or code has been added. But if want to push the code respository it will understand? No, because previously it have the file with other name. now the new name file hasbeen added. Till we have to confirm this will be under untracked possition Here we would like to take into the track position we have to use another command in gitcli.
+
+Form untracked to track or unstaged to stage have to use the command git ad. (in this case if add more files), or git add filename (If we have added one file). Before using the this have to 
+
+Later if we want to check the status of files we have to use another git command like "git status"  
+
+5. As of now just we have added the files but not yet confirmed or commited these files are ok. In this if want to go to the backstep or last operated step we have to use another command like "git restore --staged filename" (if want to check one file) 
+     "git restore --staged ." if we want to check the mulitiple files
+
+6. Here if we want to check the status of the files here we have to use the again "git status" to check the status.
+
+7. After we have decided to not to do any changes then we have to confirm using "git commit" if we use git commit. After git commit we can not to any changes.
+
+8. Now as per the process we have done all the things what we want to in the local machine. Now we have to push the code.
+
+Here we have to use the "git push" Then we can see the in portal level respository files has been added.
+
+Here for suppose if we have made some changes in the respositoey, in this case if we want to clone the perticular respositry to the local machine process is called as pull.
+
+Her we have to use the commande git pull. Here the same process has to start the and do the same in the repository.
+
+Branches:
+========
+
+Here branches concept will here is notnhing but, In the respository one default branches will be created. here if we want we can create more branche like dev branch, testing branch, production branch or main branch.
+
+In next session we have to do the opertaions like how to the pull request in branch level like dev branch to testing branch and testing branch to main branch.
+
+Now in this branches we have seen till main branch.Here if we wwant to create more braches how can we create that branches and how can we pass the code from one branch to another branch.
+
+Here now how to create a new branch using the "git branch new_branch_name"
+
+Now can we see the list of branchs will be added in the local repository is added or not
+
+using git branch command we can see the list, here which will be under * marked that will be the main branch and what we have created the new branch also will be created based on the exisiting created branch. Means for suppose if we have the existing branch is main and that have some code, the same code will come into the new branch what we have created.
+
+Here after creating the new branch we have to commit using git commit and have to check git branch.
+
+Now here we have to select the new branch as a main means we have to push the code which is availabe from new branch to remote respository using push
+
+her we have to use the command git "checkout branch_name" after git checkout we have to check the brach has been chaged or not using git branch.
+
+Here how we have to push the same code from loacal machine from new branch to remote respository.
+
+here we have to use the command "git push" command. But if we push the code directly to remote repository it will not undertsand whats happening. Because remote repository dont have the new branch.
+
+so we have to push the new branch first using with "git --set--upstream origin New_Branchname
+
+Then we have to use the git push command to push the code.
+
+now we have to transfer the data to from one branch to another branch using pull request
+
+Here now we have to go to the portal level and need to click on the pull requrest there it will ask to select from where to where means from which branch to which branch.
+
+Here we have to select upon the request and click on the merge and create pull request then all the data what ever having other branch will transfer to another branch
+
+This is all about Github
+
+==========================================================================================================================================================================================
+
+
+Devops:
+=======
+
+Where devolepment team and operations team will work together is called as Devops.
+
+Here Devops will provided different type of services.
+
+1. Azure Boards
+2. Azure Respos
+3. Azure Pipelines CI/CD
+4. Azure Artifacts 
+5. Azure Testcases
+
+1. Azure repos:
+===============
+Here Azure repos is nothing but where the developer source code is availabe is called as azure repos. its like Github respository.
+
+Here how can we use the azure reposotiry we have see now. Before going to the repos we have to know about organization.
+
+What is organization?
+A. Where we will do the project or projects is called as organization. Here we can create a project or create a no of projects under this organization. Under this organization so many multiple projects we can do.
+
+Under this project we have the above mentotined services are availabe.
+
+Here how the services will work and how can we use them let us see.
+
+Azure Repos: As discussed we can create respository where we can keep the code availabe for all the team members. Here 
+
+first developer will devolope the code and push to the repository and then we have to clone the respository to our local system using url and git commands.
+
+After cloning as usal the same process we have did in git we can use pull, push, create repository, commit all the things will be happened.
+
+============================================================================================================================================================================================
+
+Azure Boards:
+=============
+
+What are boards and how we can use the boards and what are the uses of the boards.
+
+Here boards will use to update the status on daily basis.
+
+Before juming into the boards what methodology we are using here and what is the previous methodlogy. And what are the differences.
+
+Waterfall Methodology:
+=====================
+
+Here in this water fall methodology what happends is work will not happened in a proper manner.
+
+for suppose here we have to conider all the teams into pictrure.
+
+1. Devoloper: Here for suppose deveoper has taken to create the code for two months the reaminign teams will not have work and they will sit idle.
+2. Testing: Here testing after completion developer team will test the code, if suppose thay have taken 1 month time till then remaining both teams sits idle.
+3. Deployment: In the deployment case also the same and it will be happened the same
+
+Here if we got the problem also again it has to start from the first step
+
+So here time and money wast heppening. For this reason here implemented waterfall methodology.
+
+Azgile Methodology:
+==================
+
+Here while creating the board we have to choose scrup then only we can get all the thing like below. If we select Basic, Agile ,CMMI they will not shown
+
+Agile methodology is nothging but here what happenes is we can split the work into different parts. That will be like epic/user story, features, prduct backlogs, tasks.
+
+Here the structure tree                                   EPIC
+                                                           l
+                                                        Features
+                                                           l 
+                                                    Product Backlogs
+                                                           l 
+                                                         Taks 
+
+Here every body will be work from the tasks and if want to know status of task we have to open the parent organization like product backlogs.
+
+Here for every task we have to complete with in the time, that time is called "Sprint" here sprint normally have 2 weeks time. But here based on the task it will be crease or decrease.
+
+If we have the multiple tasks for 1 sprint every body will got and start the call is called as "sprint calls".
+
+Here who will monitor the tasks?
+A. Here some body has follow all the taks status till where developer did the work, till where tester did the work that will be taking care by scrum master.
+
+Here scrum master will be oppinted by our team or from customer side. He will update all the works to client.
+
+Here the scrum master will update the work using azure boards. Here in the azure boards every body will update the works based on that scrum master will get update. This is the process happened in the boards.
+
+Let us see how to create all the things one by one.
+
+Epic: Epic will be created by Product Owner. Here acceptance criterial also will be defined by product owner.
+
+Here how can we create the epics to task. We have to see the practiacally.
+
+Here here we have to create all the things like epic, features, product backlogs, and taks.
+
+Here we can do one thing we can create all the things seperatesly and can link the same using add link.This is one process and another process is like we have to create epic and with in the epic we can create the same as mentioned as per the flowchart.
+
+Here spritning timing also we can add as per sprints. 
+
+Here using the boards scrum master will track the work. and here in procut catalouge we can increase the columns.
+
+This is all about boards here we can do and use the boards..
+
+============================================================================================================================================================================================
+Pipelines:
+=========
+
+Pipelines this is very important and this is our responsibility to create the pipe lines and deployment.
+
+Here what is CI and What is CD (Continoues Intergration and continuoes deployment)
+
+Here first developer will provie the raw code in pom.xml file. Using the pom.xml file(Using Java Code) we have to create the *.Jar /*.war files
+
+Along with POM.xml file we will have some more steps to follow. That steps will be kept here
+
+Here two things are our responisibilty 
+
+1. Biuld the code:
+2. Deployment code
+
+1. Build code: For suppose if we have taken java code we have multiple tools to build the code.
+
+Here some of the tools we have to know for java code
+
+1.Maven
+2.Gradle
+3.ANT
+
+Thes Rules need to be build the pipelines:
+==========================================
+1. Maven Code builiding: Here we have to build the code using POM.xml
+and have to convert into *.jar file / *.war file
+
+2. Here we have to copy the file from target file to Artificat stating ditrectory where the deployment will be happened. Deployment will be happened at artificat staging directory.
+
+3. Here how can publish the code in artificat stating dorectory. Here when we have to copy the files into the artificat stating directory it will not understand easly. Here in the artificat stating director have to create another folder and need to keep the files in that folder. then we have to provide the path like 
+
+Artificat_stagging_directory/Drop/*.jar file Here in this path, not exat like in this pasth code will be deployed.
+
+Deployment of the code:
+======================
+
+Here how to deploy the code have to check.
+
+for release pipelines have to follow two step, they are 
+
+1.Here we have to find where is the artifcat.
+2.Where we have to deploy the code. That we have find here.
+
+Here first have to create the release pipeline using the the previous build piple line. Let us try practically how can we create the build pipelines and release pipelines.
+============================================================================================================================================================================================
+
+Creating the CI And CI pipelines using Java Core Project:
+========================================================
+
+Here as discussed previous class. The follow steps have to follow for creating Build pipleline and release pipeline
+
+Steps:
+======
+
+1. Here we have to create organization and project.
+
+2. Have to clone the repostiory
+
+3. After cloing the respotory have to replace the with our code using push commands and commits.
+
+4. Have to check in the resposotiry the code is availabe or not.
+
+5. Here once everthing has set here have to open the build pipeline and click on classic editior and to select without yaml script.
+
+6. After that here we have to selct the tool based on code means java code or developer did the code in maven, then we have to select the Apache maven
+
+6. After selecting Apache maven, here we have to select all the required details.
+
+Here Goals menas what are file we are going to create, for suppose if we are going to create *.jar file that will be the golas=package
+
+7. As per the files here we have to select the target folder and source folder as per the copy files.
+
+8. Here publish artificat means here we have to create one folder between artifact stating directory to *.jar file. that we are creating folder like DROP.
+
+9. After Selecting all this we have to click on save and Queue
+
+10. Here we have to understand who will run the task. Here Agent will come into the picture. agent will take care of the runs.
+
+11.Here In agent job what are the points are availabe to have check here
+
+Agent pool: Here agent pool means it will be from mictrosoft or self agent pool. 
+
+Microft agent pool (Azure Pipelines): Here if we select azure pipelines related softwares will be taking care by microsft. For suppose if we need maven that will be tacking care by microsoft. And there will be no maintaince and easy for us.
+
+Agent pool (Self selected agent pool): Self selected agent pool means here related softwares will be maintained by out own In most of the cases we will select azure pipelines only for agent pool.
+
+12. Here finally have to run the build pipeline. After completion of the build pipeline, there we have to open the artifact and in this artifcat we will find the drop file.
+
+Deployment Pipeline:
+====================
+
+1. Here we have to create the deployment pipeline using releases.
+
+2. Here have to click on empty job.
+
+3. Here we have to add the artifcat. click on add and have to select latest option.
+
+4. Here we have to select where we want to deploy the code. Here we have to select azure app service deploy
+
+5.Here agent we have to select previous agent pool and specification
+
+6. Here we have to restrict the resource group list usiung the service connection. Using the service connection we have to select which resource group we need.
+
+7.After selecting all the options and final we have to click on the save and queue.
+
+8. final we have to click on the url using web app link then it will show the output.
+
+9. Here if we got the Whitelabe error means it was not a error. Code deployed success fully. There we have to providde the extention for the link. That link if we dont know we have to check with developer
+
+                                                             *************************This is all about java code build*************************
+
+============================================================================================================================================================================================
+
+
+DOTNET Core Project:
+====================
+
+
+
+
+
+
+
+
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
